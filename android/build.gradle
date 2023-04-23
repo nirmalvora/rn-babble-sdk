@@ -5,6 +5,7 @@ buildscript {
   repositories {
     google()
     mavenCentral()
+    maven { url "https://jitpack.io" }
   }
 
   dependencies {
@@ -64,6 +65,7 @@ android {
 repositories {
   mavenCentral()
   google()
+  maven { url "https://jitpack.io" }
 }
 
 def kotlin_version = getExtOrDefault("kotlinVersion")
@@ -74,6 +76,7 @@ dependencies {
   //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+  implementation 'com.github.nirmalvora:BabbleSDK:0.0.32'
 }
 
 if (isNewArchitectureEnabled()) {

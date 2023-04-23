@@ -17,6 +17,21 @@ const RnBabbleSdk = NativeModules.RnBabbleSdk
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return RnBabbleSdk.multiply(a, b);
+// export function multiply(a: number, b: number): Promise<number> {
+//   return RnBabbleSdk.multiply(a, b);
+// }
+export default class BabbleSdk {
+  static async init(user_id: String) {
+    return RnBabbleSdk.configure(user_id);
+  }
+  static async setCustomerId(customerId: String, userDetails?: any) {
+    return RnBabbleSdk.setCustomerId(customerId, userDetails);
+  }
+  static async triggerSurvey(trigger: String, properties?: any) {
+    return RnBabbleSdk.triggerSurvey(trigger, properties);
+  }
+
+  static async multiply(a: number, b: number): Promise<number> {
+    return RnBabbleSdk.multiply(a, b);
+  }
 }
