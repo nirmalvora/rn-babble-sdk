@@ -23,4 +23,10 @@ class RnBabbleSdk: NSObject {
             BabbleSdk.trigger(trigger, properties: properties)
         }
     }
+    
+    @objc(cancelSurvey)
+    func cancelSurvey() -> Void {
+        DispatchQueue.main.async {
+            BabbleSdk.cancelSurvey()        }
+    }
 }

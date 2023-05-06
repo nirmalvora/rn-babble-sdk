@@ -45,6 +45,14 @@ class RnBabbleSdkModule(reactContext: ReactApplicationContext) :
     }
   }
 
+ @ReactMethod
+  fun cancelSurvey() {
+    try{
+      BabbleSDK.cancelSurvey()
+    } catch (_: Exception) {
+
+    }
+  }
   companion object {
     const val NAME = "RnBabbleSdk"
   }

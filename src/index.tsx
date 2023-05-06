@@ -30,8 +30,7 @@ export default class BabbleSdk {
   static async triggerSurvey(trigger: String, properties?: any) {
     return RnBabbleSdk.triggerSurvey(trigger, properties);
   }
-
-  static async multiply(a: number, b: number): Promise<number> {
-    return RnBabbleSdk.multiply(a, b);
+  static async cancelSurvey() {
+    return RnBabbleSdk.cancelSurvey();
   }
 }

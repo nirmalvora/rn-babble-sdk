@@ -1,6 +1,6 @@
 {
   "name": "rn-babble-sdk",
-  "version": "0.1.0",
+  "version": "0.0.4",
   "description": "test",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -41,7 +41,10 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/nirmalvora/rn-babble-sdk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nirmalvora/rn-babble-sdk.git"
+  },
   "author": "Babble <nirmalvora61@gmail.com> (https://github.com/nirmalvora)",
   "license": "MIT",
   "bugs": {
