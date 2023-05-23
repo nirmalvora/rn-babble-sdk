@@ -1,12 +1,11 @@
 package com.rnbabblesdk
 
-import android.util.Log
+import com.babble.babblesdk.BabbleSDK
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
-import com.babble.babblesdk.BabbleSDK
-import java.util.HashMap
-import com.facebook.react.bridge.ReadableMap
 import com.facebook.react.bridge.ReactMethod
+import com.facebook.react.bridge.ReadableMap
+
 class RnBabbleSdkModule(reactContext: ReactApplicationContext) :
   ReactContextBaseJavaModule(reactContext) {
 
@@ -28,20 +27,26 @@ class RnBabbleSdkModule(reactContext: ReactApplicationContext) :
   @ReactMethod
   fun setCustomerId(customerId: String,userDetails: ReadableMap?) {
     try{
-      val hashMap = DataTypeUtils.recursivelyDeconstructReadableMap(userDetails)
+      val hashMap = if(userDetails != null)
+        DataTypeUtils.recursivelyDeconstructReadableMap(userDetails)
+      else
+        HashMap()
       BabbleSDK.setCustomerId(customerId = customerId,userDetails = hashMap)
     } catch (_: Exception) {
-
+      BabbleSDK.setCustomerId(customerId = customerId,userDetails = null)
     }
   }
 
   @ReactMethod
   fun triggerSurvey(trigger: String,properties:  ReadableMap?) {
     try{
-      val hashMap = DataTypeUtils.recursivelyDeconstructReadableMap(properties)
+      val hashMap = if(properties != null)
+        DataTypeUtils.recursivelyDeconstructReadableMap(properties)
+      else
+        HashMap()
       BabbleSDK.triggerSurvey(trigger= trigger, properties = hashMap)
     } catch (_: Exception) {
-
+      BabbleSDK.triggerSurvey(trigger= trigger, properties = null)
     }
   }
 
