@@ -76,7 +76,7 @@ dependencies {
   //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-  implementation 'com.github.nirmalvora:BabbleSDK:0.0.45'
+  implementation 'com.github.nirmalvora:BabbleSDK:0.0.46'
 }
 
 if (isNewArchitectureEnabled()) {
